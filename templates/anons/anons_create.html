@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <style>
+        body {
+            background-color: #e5e7eb;
+        }
+
+        .btn {
+            color: black;
+        }
+
+        .btn:hover {
+            color: #fff;
+        }
+
+    </style>
+
+    {% if user.is_superuser %}
+        <center>
+            <form  method="post" enctype="multipart/form-data">{% csrf_token %}
+                {{ form.media }}
+                {{ form|crispy }}
+                <br>
+                <button type="submit" class="btn btn-dark">Save</button>
+            </form>
+        </center>
+    {% else %}
+        <h1>404 Not Found</h1>
+    {% endif %}
+
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+    <form  method="post" enctype="multipart/form-data">{% csrf_token %}
+        {{ form.media }}
+        {{ form.as_p }}
+
+        <button type="submit">Send To Message</button>
+    </form>
+
+{% endblock content %}
