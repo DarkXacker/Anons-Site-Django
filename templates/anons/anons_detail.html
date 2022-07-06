@@ -2,6 +2,7 @@
 {% load static %}
 {% load social_share %}
 {% load crispy_forms_tags %}
+{% load hitcount_tags %}
 
 {% block content %}
 
@@ -70,10 +71,12 @@
                 <button class="btn btn-outline-danger send-post"><i class="fa-brands fa-telegram"></i>&nbsp;{% post_to_telegram '{{ object.nomi }}' object_or_url '' %}</button>
             </div>
             
+            {% get_hit_count for anon  %}
+            <i class="fa fa-eye" aria-hidden="true"></i>
             <form action="{% url 'like_post' object.pk %}" method="POST">{% csrf_token %}
-                    
                 <button type="submit" class="like" name="post_id" value="{{ object.id }}">👍</button> - {{ total_likes }}
             </form>
+            Views: {{ count }}
 
             <br><br>
             <!-- COMMENTS  -->

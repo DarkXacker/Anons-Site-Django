@@ -25,26 +25,28 @@
 	}
 </style>
 <br>
-<center>
-	<div class="card">
-		{% if user_model.profile_pic %}
-			<img src="{{ user_model.profile_pic.url }}" alt="Avatar" style="width:100%">
-		{% else %}
-			<img src="{% static 'images/avatar.png' %}" alt="Avatar" style="width:100%">
-		{% endif %}
-		<div class="container">
-			<center>
-				<h4><b>User Name: {{ user_model.username }}</b></h4> <hr> 
-				<h4><b>First Name: {{ user_model.first_name }}</b></h4> 
-				{% if user_model.bio %}
-					<p>Bio: {{ user_model.bio }}</p> 
-				{% endif %}
-				<p>Email: {{ user_model.email }}</p>
-			</center>
-		</div>
-	</div>
-</center>
+{% if user.is_authenticated %}
 
+	<center>
+		<div class="card">
+			{% if user_model.profile_pic %}
+				<img src="{{ user_model.profile_pic.url }}" alt="Avatar" style="width:100%">
+			{% else %}
+				<img src="{% static 'images/avatar.png' %}" alt="Avatar" style="width:100%">
+			{% endif %}
+			<div class="container">
+				<center>
+					<h4><b>User Name: {{ user_model.username }}</b></h4> <hr> 
+					<h4><b>First Name: {{ user_model.first_name }}</b></h4> 
+					{% if user_model.bio %}
+						<p>Bio: {{ user_model.bio }}</p> 
+					{% endif %}
+					<p>Email: {{ user_model.email }}</p>
+				</center>
+			</div>
+		</div>
+	</center>
+{% endif %}
 <br/><br/><br/><br/>
 
 {% endblock %}

@@ -3,80 +3,58 @@
 
 {% block content %}
 
-<link rel="stylesheet" href="{% static 'css/carusel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/carusel.css' %}">
 
-<style>
-    video {
-      width: 100%;
-    }
-</style>
-
-<center><br><br>
-    "Dagestan Group " O'zi nima ?  <br>
-    ⚜️Dagestan Group 🔰 Sizga Ishtimoiy Tarmoqlaringizni Rivojlantirishda Keng Yordam Beradigon Jamiyat !. <br>
-    ⚜️Web Saytda Siz turli Maqolalar va Instagram Telegram Youtube Tik-Tok  uchun  <br>
-    Foydali Kantentlar Topga Chiqish  <br>
-    Tez va sifatli obunachi kopaytirishingiz Mumkun<br>
-    〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️ <br>
-    ⚜️Dagestan Group Haqida bilasiz Va eshitgansiz  <br>
-    Shunday ekan Daromad qilishdan Toxtamang  <br>
-    〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️ <br>
-    ⚜️Jomoa Admini :
-    Telegram: <a href="https://t.me/allTheFake"><i class="fa-brands fa-telegram"></i> @allTheFake</a> <br>
-    ⚜️Muammo va Hamkorlik Takliflar bolsa <br>
-</center>
-<br>
-<!-- Slideshow container -->
-<div class="carusel">
-    <div class="slideshow-container fade">
-
-        <!-- Full images with numbers and message Info -->
-        <div class="Containers">
-            <div class="MessageInfo">1 / 3</div>
-            <img src="{% static 'images/logos/logo.jpg' %}" style="width:100%; height: 500px;">
-            <div class="Info">Dagestan Group</div>
-        </div>
-
-        <div class="Containers">
-            <div class="MessageInfo">2 / 3</div>
-            <img src="{% static 'images/logos/logo3.jpg' %}" style="width:100%; height: 500px;">
-            <div class="Info">Dagestan Group</div>
-        </div>
-
-        <div class="Containers">
-            <div class="MessageInfo">3 / 3</div>
-            <img src="{% static 'images/logos/logo2.jpg' %}" style="width:100%; height: 500px;">
-            <div class="Info">Dagestan Group</div>
-        </div>
-
-        <!-- Back and forward buttons -->
-        <a class="Back" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="forward" onclick="plusSlides(1)">&#10095;</a>
-    </div>
+    <center><br><br>
+        "Dagestan Group " O'zi nima ? <br>
+        ⚜️Dagestan Group 🔰 Sizga Ishtimoiy Tarmoqlaringizni Rivojlantirishda Keng Yordam Beradigon Jamiyat !. <br>
+        ⚜️Web Saytda Siz turli Maqolalar va Instagram Telegram Youtube Tik-Tok uchun <br>
+        Foydali Kantentlar Topga Chiqish <br>
+        Tez va sifatli obunachi kopaytirishingiz Mumkun<br>
+        〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️ <br>
+        ⚜️Dagestan Group Haqida bilasiz Va eshitgansiz <br>
+        Shunday ekan Daromad qilishdan Toxtamang <br>
+        〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️ <br>
+        ⚜️Jomoa Admini :
+        Telegram: <a href="https://t.me/allTheFake"><i class="fa-brands fa-telegram"></i> @allTheFake</a> <br>
+        ⚜️Muammo va Hamkorlik Takliflar bolsa <br>
+    </center>
     <br>
+    <!-- Slideshow container -->
+    <div class="carusel">
+        <div class="slideshow-container fade">
 
-    <!-- The circles/dots -->
-    <div style="text-align:center">
-        <span class="dots" onclick="currentSlide(1)"></span>
-        <span class="dots" onclick="currentSlide(2)"></span>
-        <span class="dots" onclick="currentSlide(3)"></span>
+            <!-- Full images with numbers and message Info -->
+            <div class="Containers">
+                <img src="{% static 'images/logos/logo.jpg' %}" style="width:100%; height: 500px;">
+                <div class="Info">Dagestan Group</div>
+            </div>
+
+            <!-- Back and forward buttons -->
+            <a class="Back" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="forward" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <!-- The circles/dots -->
+        <div style="text-align:center">
+            <span class="dots" onclick="currentSlide(1)"></span>
+        </div>
     </div>
-</div>
 
-<center>
-    <big>
-        <h1>
-            <i class="fa-solid fa-robot"></i> <a href="https://t.me/DagestanGroupHelp_bot" target="_blank">Telegram Bot</a> &nbsp;
-            <i class="fa-brands fa-telegram"></i> <a href="https://t.me/DagestanGroup_uz" target="_blank">Telegram Channel</a> &nbsp;
-            <i class="fa-solid fa-people-group"></i> <a href="https://t.me/DagestanGroup_chat" target="_blank">Telegram Group</a> &nbsp;
-        </h1>
-    </big>
-</center>
+    <center>
+        <big>
+            <h1>
+                <i class="fa-solid fa-robot"></i> <a href="https://t.me/DagestanGroupHelp_bot" target="_blank">Telegram
+                    Bot</a> &nbsp;
+                <i class="fa-brands fa-telegram"></i> <a href="https://t.me/DagestanGroup_uz" target="_blank">Telegram
+                    Channel</a> &nbsp;
+                <i class="fa-solid fa-people-group"></i> <a href="https://t.me/DagestanGroup_chat" target="_blank">Telegram
+                    Group</a> &nbsp;
+            </h1>
+        </big>
+    </center>
 
-<video controls>
-    <source src="{% static 'videos/about_group.mp4' %}">
-  </video>
-
-<script src="{% static 'js/carusel.js' %}"></script>
+    <script src="{% static 'js/carusel.js' %}"></script>
 
 {% endblock content %}

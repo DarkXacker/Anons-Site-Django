@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure--xkb0mb#$#9rdz=*e&)-u=j&o)-ew7t(8^^ch*hds08&p&$+hu
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -45,12 +45,15 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'fontawesomefree',
     'django_social_share',
+    'django.contrib.humanize',
 
     # My apps
     'accounts',
     'anons',
     'contact',
+    'chat',
     'pages',
+    'hitcount',
 ]
 
 MIDDLEWARE = [
@@ -80,9 +83,6 @@ TEMPLATES = [
         },
     },
 ]
-
-WSGI_APPLICATION = 'config.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
@@ -130,10 +130,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-   os.path.join(BASE_DIR, "static"),
-]
+# STATIC FILE
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
+STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
+STATICFILES_STORAGE ='django.contrib.staticfiles.storage.StaticFilesStorage'
+
 
 # Media Files
 
@@ -159,10 +161,3 @@ CKEDITOR_CONFIGS = {
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_RESTRICT_BY_USER = True
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'fulstackandgamerprogrammer@gmail.com'
-EMAIL_HOST_PASSWORD = 'Sunnatillo2008'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587

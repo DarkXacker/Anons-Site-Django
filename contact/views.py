@@ -1,35 +1,26 @@
 from django.shortcuts import redirect, render
-from contact.forms import ContactForm
-
-from django.core.mail import send_mail
-from django.conf import settings
-from django.template.loader import render_to_string
+from .models import Contact
+from django.http import HttpResponse
+from django.views.generic import ListView
 
 # Create your views here.
 
-def index(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
+def home(request):
+    if request.method == "POST":
+        contact = Contact()
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        contact.name = name
+        contact.email = email
+        contact.subject = subject
+        contact.save()
+        
+        return redirect('contact')
+       
 
-        if form.is_valid():
-            name = form.cleaned_data['name']
-            email = form.cleaned_data['email']
-            content = form.cleaned_data['content']
+    return render(request, 'contact/index.html')
 
-            html = render_to_string('contact/emails/contactform.html', {
-                'name': name,
-                'email': email,
-                'content': content
-            })
-
-            send_mail('The contact from subject','This is the message', 
-                'noreply@codewithstein.com', ['fulstackandgamerprogrammer@gmail.com'],
-                fail_silently=False,
-                html_message=html)
-
-    else:
-        form = ContactForm()
-
-    return render(request, 'contact/index.html', {
-        'form': form
-    })
+class Contact_list(ListView):
+    model = Contact
+    template_name = 'contact/list_contact.html'

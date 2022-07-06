@@ -4,6 +4,8 @@ from django.views.generic import *
 from .models import *
 from .forms import *
 from django.http import HttpResponseRedirect
+from django.db.models import Q
+from hitcount.views import HitCountDetailView
 
 # Create your views here.
 
@@ -17,9 +19,10 @@ class AnonsListView(ListView):
     model = Anon
     template_name = 'anons/anons_list.html'
 
-class AnonsDetailView(DetailView):
+class AnonsDetailView(HitCountDetailView):
     model = Anon
     template_name = 'anons/anons_detail.html'
+    count_hit = True
 
     def showvideo(request):
 
@@ -59,7 +62,7 @@ class AnonsDetailView(DetailView):
         
         context.update(data)
         return context
-
+    
 class AnonsCreateView(CreateView):
     model = Anon
     template_name = 'anons/anons_create.html'

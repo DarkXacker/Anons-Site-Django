@@ -24,8 +24,9 @@ urlpatterns = [
     path('anons/', include('anons.urls')),
     path('accounts/', include('accounts.urls')),
 	path('auth/', include('django.contrib.auth.urls')), 
-	path('contact/', include('contact.urls')), 
+	path('contact/', include('contact.urls')),
     path('ckeditor/',include('ckeditor_uploader.urls')),
+    path('chat/',include('chat.urls')),
 ]
 
 if settings.DEBUG:

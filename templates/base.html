@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>FR13NDS - ONLINE SHOP</title>
+  <title>Anonim Creo</title>
   <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
   <link href="https://cdn.jsdelivr.net/npm/daisyui@2.15.4/dist/full.css" rel="stylesheet" type="text/css" />
@@ -59,7 +59,7 @@
                 <a href="/admin/">Admin Panel</a>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <a href="{% url 'contact_list' %}">Contact</a>
               </li>
             </ul>
           </li>
@@ -82,10 +82,10 @@
         </ul>
         </li>
         <li>
-          <a href="#"><i class="fa-solid fa-address-card"></i> Contact</a>
+          <a href="{% url 'contact' %}"><i class="fa-solid fa-address-card"></i> Contact</a>
         </li>
         <li>
-          <a href="https://www.youtube.com/channel/UCyEV-nhBLMXX562XuHwYM2Q" target="_blank"><i class="fa-brands fa-youtube"></i> You Tube</a>
+          <a href="https://youtube.com/channel/UCdFIesF3wbJE9QK0pwLbatw" target="_blank"><i class="fa-brands fa-youtube"></i> You Tube</a>
         </li>
         </ul>
 
